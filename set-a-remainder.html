@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Reminder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2>Set a Remainder </h2>
+
+    <form id="reminderForm">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required><br>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" cols="50" required></textarea><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="contactNo">Contact No:</label>
+        <input type="tel" id="contactNo" name="contactNo" required><br>
+
+        <label for="smsNo">SMS No:</label>
+        <input type="tel" id="smsNo" name="smsNo" required><br>
+
+        <label for="remainder">Remainder:</label>
+        <input type="text" id="remainder" name="remainder" required><br>
+
+        <button type="button" onclick="addReminder()">Add Reminder</button>
+    </form>
+
+    <script>
+        function addReminder() {
+            const formData = {
+                Date: document.getElementById('Date').value,
+                Subject_1: document.getElementById('Subject_1').value,
+                discription: document.getElementById('discription').value,
+                Email_Address: document.getElementById('Email_Address').value,
+                Contact_No: document.getElementById('Contact_No').value,
+                SMS_No: document.getElementById('SMS_No').value,
+                Remainder_name: document.getElementById('Remainder_name').value
+            };
+
+            // Send data to the server
+            fetch('http://localhost:3000/addReminder', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.success) {
+                        alert('Reminder added successfully!');
+                    } else {
+                        alert('Error adding reminder. Please try again.');
+                    }
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+
+</body>
+
+</html>

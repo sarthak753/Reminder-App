@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+
+    <h2>Modify Remainder</h2>
+
+    <form action="#" method="post">
+        <label for="date">Select a Date:</label>
+        <input type="date" id="date" name="date">
+        <i class="far fa-calendar-alt"></i><br>
+
+        <label for="subject">Subject:</label>
+        <select id="subject" name="subject">
+            <option value="meeting">Meeting</option>
+            <option value="appointment">Appointment</option>
+            <option value="followup">Follow-up</option>
+        </select><br>
+        <label for="Remainder">Remainder:</label>
+        <select id="Remainder" name="Remainder">
+            <option value="meeting">Meeting</option>
+            <option value="appointment">Appointment</option>
+            <option value="followup">Follow-up</option>
+        </select><br>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" cols="50"></textarea><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email"><br>
+
+        <label for="contact">Contact No:</label>
+        <input type="tel" id="contact" name="contact"><br>
+
+        <label for="sms">SMS No:</label>
+        <input type="tel" id="sms" name="sms"><br>
+
+        <label>Reminder:</label>
+        <input type="checkbox" id="7days" name="reminder" value="7days">
+        <label for="7days">7 Days</label>
+
+        <input type="checkbox" id="5days" name="reminder" value="5days">
+        <label for="5days">5 Days</label>
+
+        <input type="checkbox" id="8days" name="reminder" value="8days">
+        <label for="8days">8 Days</label><br>
+
+        <button type="button">Back</button>
+        <button type="submit">Confirm</button>
+        <button type="logout"> <a href="C:\Users\admin\Desktop\remainder-app\logout.html">Logout</a></button>
+    </form>
+
+</body>
+
+</html>

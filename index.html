@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="style.css" rel="stylesheet">
+    <script>
+        function login() {
+            // Get the values entered by the user
+            var enteredUsername = document.getElementById('username').value;
+            var enteredPassword = document.getElementById('password').value;
+
+            // Replace this with your actual hidden password
+            var hiddenPassword = 'sarthak1234';
+
+
+            // Check if the entered username and password match the hidden credentials
+            if (enteredUsername === 'sarthak123' && enteredPassword === hiddenPassword) {
+                // Redirect to the next page (replace 'nextPage.html' with your actual next page)
+                window.location.href = 'homepage.html';
+            } else {
+                // Display a login error message or redirect to an error page
+                window.location.href = 'login-failed.html';
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+
+
+    <form action="action_page.php" method="post">
+
+
+        <div class="container">
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <button type="button" onclick="login()">Login</button>
+
+
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+
+
+
+
+</body>
+
+</html>
